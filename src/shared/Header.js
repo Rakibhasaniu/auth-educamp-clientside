@@ -15,7 +15,7 @@ const Header = () => {
           />
         </div>
         <div className="menu-container d-flex flex-wrap ">
-          <Link to="/home" className="text-decoration-none">
+          <Link  className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">EduCamp</li>
           </Link>
           {/* <Link to="/login" className="text-decoration-none">
@@ -36,25 +36,25 @@ const Header = () => {
               </li>
             </Link>
           )} */}
-            <Link to="/about" className="text-decoration-none">
+            <Link to="/courses" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">Courses</li>
           </Link>
-          <Link to="/about" className="text-decoration-none">
+          <Link to="/faq" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">FAQ</li>
           </Link>
-          <Link to="/about" className="text-decoration-none">
+          <Link to="/login" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">Login</li>
           </Link>
-          <Link to="/about" className="text-decoration-none">
+          <Link to="/register" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">Register</li>
           </Link>
-          <Link to="/about" className="text-decoration-none">
+          <Link to="/blog" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">Blog</li>
           </Link>
           <Link to="/about" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">About</li>
           </Link>
-          <Link to="/about" className="text-decoration-none">
+          <Link to="/dark" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">Dark</li>
           </Link>
           <li className="nav-link items  ms-3 text-info fw-bolder">
