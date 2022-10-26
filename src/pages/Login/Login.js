@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { BiLogInCircle } from "react-icons/bi";
 import { Link } from 'react-router-dom';
-import './Login.css'
+import './Login.css';
+import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import app from 'src\firebase\firebase.init';
+
+const auth = getAuth(app)
 const Login = () => {
   const[error, setError] = useState({
     email: "",
     password: "",
+  
 });
   const [info, setInfo] = useState({
     email: "",
@@ -35,7 +40,13 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
+    signInWithEmailAndPassword(auth, info.email,info.password)
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(er => {
+      console.log(er);
+    })
   }
     return (
         <div className="login-container">
@@ -51,7 +62,7 @@ const Login = () => {
         <button>Login</button>
 
         <p>
-          Don't have an account? <Link to="/register">Sign up first</Link>
+          Don't have an account? <Link to="/register">Register first</Link>
         </p>
       </form>
 
