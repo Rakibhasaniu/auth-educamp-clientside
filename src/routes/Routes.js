@@ -2,10 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Blog from "../pages/Blog/Blog";
 import Courses from "../pages/Courses/Courses";
+import Details from "../pages/Details/Details";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Title from "../pages/Title/Title";
+
 
 
 export const routes = createBrowserRouter([
@@ -18,11 +20,21 @@ export const routes = createBrowserRouter([
                 element: <Home></Home>
             },
             {
+                path: '/home',
+                element: <Home></Home>
+            },
+            {
+                path: '/categories/:id',
+                element: <Details></Details>,
+                loader : ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+            },
+
+            {
                 path: '/title/:id',
                 element: <Title></Title>
             },
             {
-                path: '/courses/:id',
+                path: '/courses',
                 element: <Courses></Courses>
             },
             {
@@ -37,6 +49,7 @@ export const routes = createBrowserRouter([
                 path:'/blog',
                 element: <Blog></Blog>
             }
+           
 
         ]
     }

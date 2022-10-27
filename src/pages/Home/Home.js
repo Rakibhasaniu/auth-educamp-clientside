@@ -5,7 +5,7 @@ const Home = () => {
     const [titles, setTitle] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('http://localhost:5000/categories')
         .then(res => res.json())
         .then(data => setTitle(data))
     },[])
@@ -14,7 +14,7 @@ const Home = () => {
             <h2>This Is Home</h2>
             <div>
                 {
-                    titles.map(ti => <DisplayDetails key={ti._id} ti={ti}></DisplayDetails>)
+                    titles.map(ti => <DisplayDetails key={ti.id} ti={ti}></DisplayDetails>)
                 }
             </div>
         </div>

@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Courses = () => {
+    
     return (
-        <div>
-            <h2>This Is Courses</h2>
-        </div>
+        
+     <div>
+        
+     </div>
     );
 };
 

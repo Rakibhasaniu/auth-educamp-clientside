@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { BiLogInCircle } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 import './Login.css';
-import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
-import app from 'src\firebase\firebase.init';
 
-const auth = getAuth(app)
+
+
+
+
+
+
 const Login = () => {
+
   const[error, setError] = useState({
     email: "",
     password: "",
@@ -40,13 +44,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, info.email,info.password)
-    .then(result => {
-      console.log(result.user);
-    })
-    .catch(er => {
-      console.log(er);
-    })
+    console.log(info)
+  
   }
     return (
         <div className="login-container">

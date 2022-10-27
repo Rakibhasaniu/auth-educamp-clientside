@@ -36,6 +36,9 @@ const Header = () => {
               </li>
             </Link>
           )} */}
+          <Link to="/home" className="text-decoration-none">
+            <li className="nav-link items  ms-3 text-info fw-bolder">Home</li>
+          </Link>
             <Link to="/courses" className="text-decoration-none">
             <li className="nav-link items  ms-3 text-info fw-bolder">Courses</li>
           </Link>

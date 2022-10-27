@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DisplayDetails = ({ti}) => {
     return (
-        <div className="card w-96 bg-base-100  shadow-xl">
+        <div className="card  bg-base-100  shadow-xl">
   <figure><img src={ti.image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{ti.title}</h2>
-    <p>{ti.details}</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Details</button>
-    </div>
+    <p>{ti.details.slice(0, 150) + '...'}</p>
+    <Link to={`/categories/${ti.id}`} >Deatils</Link>
+    
   </div>
 </div>
     );
