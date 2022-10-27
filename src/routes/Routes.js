@@ -3,6 +3,7 @@ import Main from "../layout/Main";
 import Blog from "../pages/Blog/Blog";
 import Courses from "../pages/Courses/Courses";
 import Details from "../pages/Details/Details";
+import Faq from "../pages/Faq/Faq";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
@@ -48,6 +49,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path:'/faq',
+                element: <Faq></Faq>
             }
            
 
