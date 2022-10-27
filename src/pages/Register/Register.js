@@ -16,7 +16,7 @@ const Register = () => {
 
     return (
         <div className="login-container">
-      <div className="login-title">Sign up <SiGnuprivacyguard /></div>
+      <div className="login-title">Register<SiGnuprivacyguard /></div>
       <form className="login-form" onSubmit={handleSubmit} >
         <input type="name" placeholder="Your Name" />
         <input type="text" placeholder="Your Email" value={info.email} onChange={handleEmail} />
@@ -25,7 +25,7 @@ const Register = () => {
 
         <input type="password" placeholder="confirm password" />
 
-        <button>Sign up</button>
+        <button>Register</button>
 
       </form>
     </div>

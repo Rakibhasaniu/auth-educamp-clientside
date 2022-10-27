@@ -6,7 +6,7 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #ecf0f3;
+    background: #80888e;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 
@@ -18,7 +18,7 @@
     margin-top: 10px;
     font-weight: 900;
     font-size: 1.8rem;
-    color: #1da1f2;
+    color: #687075;
     letter-spacing: 1px;
 }
 
@@ -63,24 +63,21 @@
 .login-container button {
     color: white;
     margin-top: 20px;
-    background: #1da1f2;
+    background: #393f43;
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
-    transition: 0.5s;
+    
+    
 }
 
-.login-container button:hover {
-    box-shadow: none;
-    background-color: #1b80bf;
-}
+
 
 
 .error-message{
     font-size: 12px;
-    color: red;
+    color: rgb(18, 123, 34);
     margin:10px;
 }
 .error-message::before{
