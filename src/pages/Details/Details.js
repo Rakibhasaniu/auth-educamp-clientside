@@ -39,7 +39,7 @@ const Details = () => {
                             <span className='flex align-middle'><p className='mr-1'>Download Pdf</p> <FaDownload className='mt-1 ml-1'></FaDownload></span>
                         </button>
           </Link>
-          <Link  >Premium Acces</Link>
+          <Link to='/checkout' > <button>Premium Acces</button> </Link>
         
         </Card.Body>
       </Card>
