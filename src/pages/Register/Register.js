@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvide';
 const Register = () => {
 
   const {createUser} = useContext(AuthContext);
-  
+  const [error, setError] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,9 +18,13 @@ const Register = () => {
     createUser(email, password)
     .then(result => {
       const user = result.user;
+      setError('');
       form.reset();
     })
-    .catch(error => console.error(error))
+    .catch(error => {
+      console.error(error)
+      setError(error.message);
+    })
    
   }
 

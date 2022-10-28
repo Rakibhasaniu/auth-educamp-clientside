@@ -1,18 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import AuthProvider, { AuthContext } from '../Contexts/AuthProvider';
+import { AuthContext } from '../contexts/AuthProvide';
 
-const PrivetRoute = ({ children }) => {
-
-    const { user } = useContext(AuthContext)
-    // console.log(user);
-    const location = useLocation()
-
-    if (user && user?.uid) {
-        return children;
+const PrivateRoute = ({children}) => {
+    const {user} = useContext(AuthContext);
+    const location = useLocation();
+    if(!user){
+        return <Navigate to='/login' state={{from: location}} replace></Navigate>
     }
-
-    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+    return children;
 };
 
-export default PrivetRoute;
+export default PrivateRoute;
