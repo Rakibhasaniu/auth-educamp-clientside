@@ -1,27 +1,37 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { SiGnuprivacyguard } from "react-icons/si";
+import { AuthContext } from '../../contexts/AuthProvide';
 const Register = () => {
 
-  const [info, userInfo] = useState({
-    email: "",
-    password: ""
-  })
-  const handleEmail = (e) => {
-    
-  }
+  const {createUser} = useContext(AuthContext);
+  
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photoURL =form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+    .then(result => {
+      const user = result.user;
+      form.reset();
+    })
+    .catch(error => console.error(error))
+   
   }
 
     return (
         <div className="login-container">
       <div className="login-title">Register<SiGnuprivacyguard /></div>
       <form className="login-form" onSubmit={handleSubmit} >
-        <input type="name" placeholder="Your Name" />
-        <input type="text" placeholder="Your Email" value={info.email} onChange={handleEmail} />
-        <input type="text" placeholder="Image Url" />
-        <input placeholder="password" />
+        <input type="name" placeholder="Your Name" name='name' />
+        <input type="text" placeholder="Your Email" name='email' required />
+        <input type="text" placeholder="Image Url" name='photoURL' />
+        <input placeholder="password" name='password' required />
 
         <input type="password" placeholder="confirm password" />
 

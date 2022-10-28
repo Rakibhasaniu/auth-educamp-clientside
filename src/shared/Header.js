@@ -1,8 +1,21 @@
 import React from 'react';
+import { useContext } from 'react';
+import { Button, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvide';
 import './Header.css'
 
+
+
+
 const Header = () => {
+
+ const {user, logout} = useContext(AuthContext);
+ const handleLogout = ()  => {
+  logout()
+  .then( () => {})
+  .catch(error => console.error(error))
+ }
     return (
        
       <div>
@@ -61,7 +74,25 @@ const Header = () => {
             <li className="nav-link items  ms-3 text-info fw-bolder">Dark</li>
           </Link>
           <li className="nav-link items  ms-3 text-info fw-bolder">
-            {/* {user?.displayName} */}
+            {
+              user?.uid ? 
+              <>
+                <span>{user?.displayName}</span>
+                <Button onClick={handleLogout} >Log Out</Button>
+              </>
+              :
+              <>
+                <Link to='/login'>Login</Link>
+                <Link to='/register'>Register</Link>
+              </>
+            }
+            
+          </li>
+          <li className="nav-link items  ms-3 text-info fw-bolder">
+            {user?.photoURL ?
+            <Image style={{height: '40px'}} roundedCircle src={user.photoURl}></Image>  
+            : <p>No Photo</p>
+          }
           </li>
         </div>
       </nav>
