@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Title = () => {
+const CourseDiv = () => {
     return (
         <div>
-            <h2>This Is Title</h2>
+            
         </div>
     );
 };
 
-export default Title;
+export default CourseDiv;
