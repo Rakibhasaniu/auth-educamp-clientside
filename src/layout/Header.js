@@ -13,23 +13,23 @@ const Navbar = () => {
         }).catch(error => console.error(error))
     }
     return (
-        <div className="navbar bg-amber-500 lg:px-10">
+        <div className="navbar bg-gray-400 text-gray-100 items-center lg:px-10">
        
-        <div className="navbar-start ">
+        <div className="navbar-start text-gray-100 ">
         
             <div className='hidden lg:block'>
                 <div className='flex'>
                     <Link to='/' className=" normal-case text-xl lg:w-20">
                         <img className='w-full rounded-circle' style={{height:'50px'}} src='https://upload.wikimedia.org/wikipedia/commons/e/e2/Elogo.png' alt="" />
                     </Link>
-                    <Link to='/' className='flex items-center font-bold text-2xl text-white text-amber-500'>Etech</Link>
+                    <Link to='/' className='flex items-center font-bold text-2xl text-white text-amber-500'>EduCamp</Link>
                 </div>
             </div>
             <div className="dropdown lg:hidden">
                 <label tabIndex={0} className="btn btn-ghost btn-circle text-white mr-2">
                     <svg xmlns="" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                 </label>
-                <ul tabIndex={0} className="lg-header hiside menu menu-compact dropdown-content text-white p-2  shadow bg-slate-700  rounded-box w-60  lg:hidden">
+                <ul tabIndex={0} className="lg-header hiside menu menu-compact dropdown-content text-white p-2  shadow bg-slate-700   rounded-box w-60  lg:hidden">
                     <Link to='/' className='btn '>Home</Link>
                     <Link to='/courses' className='btn'> Courses</Link>
                     <Link to='/faq' className='btn'>FAQ</Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
                     <Link to='/' className='btn '>Home</Link>
                     <Link to='/courses' className='btn'>Courses</Link>
                     <Link to='/faq' className='btn'>FAQ</Link>
-                    <Link to='/block' className='btn '>Block</Link>
+                    <Link to='/block' className='btn '>Blog</Link>
 
                     <label htmlFor="Toggle1" className="inline-flex ml-5 items-center space-x-4 cursor-pointer text-gray-100">
                         <span className='text-1xl text-white text-bold'>Light</span>
